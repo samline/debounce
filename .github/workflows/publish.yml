@@ -40,7 +40,19 @@ jobs:
       - name: Test
         run: npm test
 
+      - name: Check if version already exists on npm
+        id: npm_version
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          if npm view "@samline/debounce@$VERSION" version >/dev/null 2>&1; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+            echo "Version $VERSION already exists on npm. Skipping publish."
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Publish
+        if: steps.npm_version.outputs.exists != 'true'
         run: npm publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
