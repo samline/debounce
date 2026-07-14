@@ -1,4 +1,4 @@
-# @samline/debounce
+# Debounce
 
 A debounce utility with a shared core and dedicated entrypoints for vanilla JavaScript, React, Vue, Svelte, and direct browser usage.
 
