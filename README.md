@@ -2,7 +2,7 @@
 
 Tiny `debounce`, `throttle` and `rafThrottle` with `cancel()`, `flush()` and `pending()`, for vanilla JavaScript, React, Vue, Svelte and plain HTML. They forward `this`, return the last result and never throw outside the browser.
 
-[Demo](https://samline.github.io/utils/debounce/) · [Examples](https://samline.github.io/utils/debounce/examples/) · [Documentation](https://samline.github.io/utils/docs/debounce/) · [Changelog](CHANGELOG.md)
+[Demo](https://samline.github.io/debounce/) · [Examples](https://samline.github.io/debounce/examples/) · [Documentation](https://samline.github.io/debounce/docs/) · [Changelog](CHANGELOG.md)
 
 ## Table of contents
 
@@ -113,28 +113,28 @@ The bundle defines `window.Debounce` with `debounce`, `throttle`, `rafThrottle` 
 
 ## Documentation
 
-Read the [documentation](https://samline.github.io/utils/docs/debounce/) for the full guides and API contracts, and explore [working examples](https://samline.github.io/utils/debounce/examples/) with complete and separate source files.
+Read the [documentation](https://samline.github.io/debounce/docs/) for the full guides and API contracts, and explore [working examples](https://samline.github.io/debounce/examples/) with complete and separate source files.
 
-| Guide                                                                             | What it covers                                           |
-| --------------------------------------------------------------------------------- | -------------------------------------------------------- |
-| [Installation](https://samline.github.io/utils/docs/debounce/getting-started/)    | npm, CDN and the first debounced handler.                |
-| [API reference](https://samline.github.io/utils/docs/debounce/reference/api/)     | Every function, its return value and the browser global. |
-| [Options](https://samline.github.io/utils/docs/debounce/reference/configuration/) | `leading`, `trailing`, `maxWait` and the lifecycle.      |
-| [Frameworks](https://samline.github.io/utils/docs/debounce/guides/frameworks/)    | React, Vue and Svelte adapters.                          |
+| Guide                                                                       | What it covers                                           |
+| --------------------------------------------------------------------------- | -------------------------------------------------------- |
+| [Installation](https://samline.github.io/debounce/docs/getting-started/)    | npm, CDN and the first debounced handler.                |
+| [API reference](https://samline.github.io/debounce/docs/reference/api/)     | Every function, its return value and the browser global. |
+| [Options](https://samline.github.io/debounce/docs/reference/configuration/) | `leading`, `trailing`, `maxWait` and the lifecycle.      |
+| [Frameworks](https://samline.github.io/debounce/docs/guides/frameworks/)    | React, Vue and Svelte adapters.                          |
 
 ## Changelog
 
-Read [CHANGELOG.md](CHANGELOG.md) or the [published changelog](https://samline.github.io/utils/docs/debounce/changelog/) for release history and explicitly marked breaking and behavior changes. Review the notes before upgrading.
+Read [CHANGELOG.md](CHANGELOG.md) or the [published changelog](https://samline.github.io/debounce/docs/changelog/) for release history and explicitly marked breaking and behavior changes. Review the notes before upgrading.
 
 ## AI agent skill
 
-The [Debounce skill](https://samline.github.io/utils/skills/debounce/SKILL.md) teaches verified package integration. Its maintained [repository source](site/SKILL.md) and website download are the same file. Verify the installed package version before applying its guidance.
+The [Debounce skill](https://samline.github.io/debounce/skills/debounce/SKILL.md) teaches verified package integration. Its maintained [repository source](skills/debounce/SKILL.md) and website download are the same file. Verify the installed package version before applying its guidance.
 
-Download [SKILL.md](https://samline.github.io/utils/skills/debounce/SKILL.md) into a `debounce/` folder in your agent's supported skill directory. For agents that discover project skills from `.agents/skills/`:
+Download [SKILL.md](https://samline.github.io/debounce/skills/debounce/SKILL.md) into a `debounce/` folder in your agent's supported skill directory. For agents that discover project skills from `.agents/skills/`:
 
 ```sh
 mkdir -p .agents/skills/debounce
-curl --fail --location https://samline.github.io/utils/skills/debounce/SKILL.md \
+curl --fail --location https://samline.github.io/debounce/skills/debounce/SKILL.md \
   --output .agents/skills/debounce/SKILL.md
 ```
 

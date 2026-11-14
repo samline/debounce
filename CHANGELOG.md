@@ -1,16 +1,24 @@
-# @samline/debounce
+# Changelog
 
-## 1.0.1
+All notable changes to this package. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follow [semver](https://semver.org/).
 
-### Patch Changes
+## Unreleased
 
-- 72e0da7: Documentation only: the README follows the canonical @samline structure with links to the new website (Home, examples, docs and agent skill), and the package now ships LICENSE.md.
+### Changed
 
-## 1.0.0
+- The package moved from the `samline/utils` monorepo to its own repository, [samline/debounce](https://github.com/samline/debounce). Homepage, repository and documentation links point to the package's own site.
 
-### Major Changes
+## [1.0.1] - 2026-11-13
 
-- e9a41c7: Move to the `samline/utils` monorepo and release 1.0.
+### Fixed
+
+- Documentation only: the README follows the canonical @samline structure with links to the new website (Home, examples, docs and agent skill), and the package now ships LICENSE.md.
+
+## [1.0.0] - 2026-11-12
+
+### Added
+
+- Move to the `samline/utils` monorepo and release 1.0.
 
   - New `throttle`, `rafThrottle` and React/Vue `useThrottledCallback`.
   - Every helper returns a function with `cancel()`, `flush()` and `pending()`. It forwards `this` and returns the last result.

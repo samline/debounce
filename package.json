@@ -12,14 +12,13 @@
   ],
   "author": "Samuel Olvera (samline)",
   "license": "MIT",
-  "homepage": "https://samline.github.io/utils/debounce/",
+  "homepage": "https://samline.github.io/debounce/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/samline/utils.git",
-    "directory": "packages/debounce"
+    "url": "git+https://github.com/samline/debounce.git"
   },
   "bugs": {
-    "url": "https://github.com/samline/utils/issues"
+    "url": "https://github.com/samline/debounce/issues"
   },
   "type": "module",
   "sideEffects": [
@@ -33,6 +32,7 @@
   "engines": {
     "node": ">=20"
   },
+  "packageManager": "bun@1.4.4",
   "publishConfig": {
     "access": "public"
   },
@@ -73,10 +73,17 @@
   "scripts": {
     "clean": "rm -rf dist coverage",
     "build": "tsup",
+    "dev": "tsup --watch",
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
-    "prepublishOnly": "bun run clean && bun run build && bun run typecheck && bun run test:coverage"
+    "test:e2e": "playwright test",
+    "size": "node scripts/check-size.mjs",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "bun run format:check && bun run typecheck && bun run test:coverage && bun run build && bun run size && bun run test:e2e",
+    "prepublishOnly": "bun run clean && bun run build && bun run typecheck && bun run test:coverage",
+    "release": "bun run check && npm publish"
   },
   "peerDependencies": {
     "react": ">=18",
@@ -95,11 +102,20 @@
     }
   },
   "devDependencies": {
+    "@playwright/test": "^1.65.0",
     "@testing-library/react": "^16.3.0",
+    "@types/node": "^24.13.5",
     "@types/react": "^19.1.0",
+    "@vitest/coverage-v8": "^5.0.1",
+    "esbuild": "^0.28.2",
+    "jsdom": "^26.1.0",
+    "prettier": "^3.9.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "svelte": "^5.28.2",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.3",
+    "vitest": "^5.0.1",
     "vue": "^3.5.13"
   },
   "size": {
