@@ -1,0 +1,59 @@
+---
+title: 'Debounce'
+description: What @samline/debounce does, when to use debounce, throttle or rafThrottle, and where to start.
+locale: en
+sidebar:
+  group: start
+  order: 1
+  label: Overview
+---
+
+import CardGrid from '../../../../shared/components/CardGrid.astro'
+import LinkCard from '../../../../shared/components/LinkCard.astro'
+import { href } from '../../lib/routes'
+
+`@samline/debounce` controls how often a function runs. It ships three tools with the same returned controls:
+
+| Tool          | Runs                                                        | Use it for                       |
+| ------------- | ----------------------------------------------------------- | -------------------------------- |
+| `debounce`    | Once the calls stop for `wait` ms                           | Search, validation, resize end   |
+| `throttle`    | At most once every `wait` ms, plus the last call of a burst | Autosave, analytics, progress    |
+| `rafThrottle` | At most once per animation frame                            | Scroll, pointer and layout reads |
+
+Every returned function forwards `this` and its arguments, returns the last result and has `cancel()`, `flush()` and `pending()`.
+
+## Choose your next step
+
+<CardGrid columns={2}>
+
+<LinkCard href={href('getting-started')} title="Installation">
+
+Package managers, the CDN and the first debounced handler.
+
+</LinkCard>
+
+<LinkCard href={href('guides/examples')} title="Examples">
+
+Live previews with the complete, copyable source of each one.
+
+</LinkCard>
+
+<LinkCard href={href('reference/api')} title="API reference">
+
+Every function and its return value.
+
+</LinkCard>
+
+<LinkCard href={href('reference/configuration')} title="Configuration">
+
+Defaults and accepted values of `leading`, `trailing` and `maxWait`.
+
+</LinkCard>
+
+<LinkCard href={href('guides/frameworks')} title="Framework integrations">
+
+React, Vue and Svelte adapters.
+
+</LinkCard>
+
+</CardGrid>

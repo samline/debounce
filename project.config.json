@@ -1,0 +1,31 @@
+{
+  "package": {
+    "name": "Debounce",
+    "npmName": "@samline/debounce",
+    "version": "1.0.1",
+    "description": "Tiny debounce, throttle and rafThrottle with cancel, flush and pending, for vanilla JavaScript, React, Vue, Svelte and plain HTML.",
+    "author": "Samuel Olvera (samline)",
+    "license": "MIT",
+    "keywords": ["debounce", "throttle", "requestAnimationFrame", "react", "vue", "svelte"]
+  },
+  "site": {
+    "url": "https://samline.github.io/debounce/",
+    "repository": "https://github.com/samline/debounce",
+    "namespace": "samline-debounce",
+    "template": false,
+    "credit": "samline"
+  },
+  "theme": {
+    "accentLight": "#bf4532",
+    "accentDark": "#ea6a55"
+  },
+  "delivery": {
+    "cdnScript": "https://cdn.jsdelivr.net/npm/@samline/debounce@1.0.1/dist/browser/debounce.global.js",
+    "cdnStylesheet": null
+  },
+  "dev": {
+    "landingPort": 4420,
+    "docsPort": 4421,
+    "testPort": 4428
+  }
+}
