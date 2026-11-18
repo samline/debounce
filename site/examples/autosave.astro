@@ -10,16 +10,20 @@ import './_styles.css'
 
 <script>
   import { throttle } from '@samline/debounce'
+  import { preview } from '../../shared/lib/preview'
 
-  const root = document.querySelector<HTMLElement>('[data-preview="autosave"]')!
-  const note = root.querySelector('textarea')!
-  const saved = root.querySelector('.status')!
-  let saves = 0
+  preview('autosave', stage => {
+    const root = stage.querySelector<HTMLElement>('[data-preview="autosave"]')!
+    const note = root.querySelector('textarea')!
+    const saved = root.querySelector('.status')!
+    let saves = 0
 
-  const save = throttle(() => {
-    saves += 1
-    saved.textContent = `Saved ${saves} times · ${note.value.length} characters`
-  }, 1000)
+    const save = throttle(() => {
+      saves += 1
+      saved.textContent = `Saved ${saves} times · ${note.value.length} characters`
+    }, 1000)
 
-  note.addEventListener('input', save)
+    note.addEventListener('input', save)
+    return () => save.cancel()
+  })
 </script>

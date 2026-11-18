@@ -1,5 +1,7 @@
 ---
 // Home preview: one input, three handlers, so the difference is visible.
+import Button from '../shared/components/Button.astro'
+import Icon from '../shared/components/Icon.astro'
 ---
 
 <debounce-demo class="demo">
@@ -11,19 +13,24 @@
     <div><dt>throttle 300 ms</dt><dd data-count="throttle">0</dd></div>
     <div><dt>rafThrottle</dt><dd data-count="raf">0</dd></div>
   </dl>
+  <div class="actions">
+    <Button variant="secondary" data-reset>
+      <Icon name="reset" size="1em" weight={2} />
+      Reset
+    </Button>
+  </div>
 </debounce-demo>
 
 <script>
   import { debounce, rafThrottle, throttle } from '@samline/debounce'
-
   for (const root of document.querySelectorAll<HTMLElement>('debounce-demo')) {
     const input = root.querySelector('input')!
-    const counter = (name: string) => {
-      const node = root.querySelector(`[data-count="${name}"]`)!
-      let count = 0
-      return () => {
-        node.textContent = String(++count)
-      }
+    const nodes = [...root.querySelectorAll<HTMLElement>('[data-count]')]
+    const counts = new Map<string, number>()
+    const counter = (name: string) => () => {
+      const count = (counts.get(name) ?? 0) + 1
+      counts.set(name, count)
+      root.querySelector(`[data-count="${name}"]`)!.textContent = String(count)
     }
     const raw = counter('raw')
     const debounced = debounce(counter('debounce'), 300)
@@ -34,6 +41,16 @@
       debounced()
       throttled()
       framed()
+    })
+    // Reset drops pending calls too, so no count arrives after it.
+    root.querySelector('[data-reset]')!.addEventListener('click', () => {
+      debounced.cancel()
+      throttled.cancel()
+      framed.cancel()
+      counts.clear()
+      for (const node of nodes) node.textContent = '0'
+      input.value = ''
+      input.focus()
     })
   }
 </script>
@@ -71,6 +88,10 @@
     font: 0.65rem/1.6 var(--font-mono);
     letter-spacing: 0.08em;
     color: var(--color-text-subtle);
+  }
+  .actions {
+    display: flex;
+    justify-content: flex-end;
   }
   dd {
     margin: 0.25rem 0 0;
