@@ -49,9 +49,9 @@
   },
   "themeReview": {
     "status": "verified",
-    "source": "The maintainer asked for a new accent, not used by any sibling, in chat on 2026-11-13; vermilion (#e0533d) derived with npm run accent. Carried over from the utils collection site.",
-    "accentLight": "#4338ca",
-    "accentDark": "#a5b4fc"
+    "source": "The maintainer asked in chat on 2026-11-19 for accents no sibling site shares; violet (#6d28d9 / #a78bfa) replaces #4338ca / #a5b4fc, both above 4.5:1 against the theme background and button text.",
+    "accentLight": "#6d28d9",
+    "accentDark": "#a78bfa"
   },
   "sources": [
     {

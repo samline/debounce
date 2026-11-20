@@ -16,8 +16,8 @@
     "credit": "samline"
   },
   "theme": {
-    "accentLight": "#4338ca",
-    "accentDark": "#a5b4fc"
+    "accentLight": "#6d28d9",
+    "accentDark": "#a78bfa"
   },
   "delivery": {
     "cdnScript": "https://cdn.jsdelivr.net/npm/@samline/debounce@1.0.2/dist/browser/debounce.global.js",
