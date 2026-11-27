@@ -94,7 +94,7 @@ note.addEventListener('input', save)`,
     description: 'rafThrottle turns a burst of scroll events into one update per animation frame.',
     files: {
       html: `<div id="bar" role="progressbar" aria-label="Reading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
-<div id="article">
+<div id="article" tabindex="0" role="region" aria-label="Scrollable article">
   <p>Scroll this box.</p>
   <p style="height: 60rem">A long article.</p>
 </div>`,
